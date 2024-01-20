@@ -154,12 +154,12 @@ transition: 0.2s;
 .top {
   display: block;
   position: fixed;
-  bottom: 5px;
-  right: -100px;
-  background-color: red;
-  color: black;
+  bottom: 15px;
+  right: 15px;
+  background-color: var(--main-color);
+  color: white;
   padding: 20px;
-  border-radius: 50%;
+  border-radius: 30%;
   user-select: none;
   cursor: pointer;
   transition: 0.5s;
