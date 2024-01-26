@@ -57,7 +57,7 @@ links.forEach((link)=>{
 // menu toggle
 function openNavMenu(){
     var menu = document.getElementById("list")
-    menu.classList.toggle("flex");
+    menu.classList.toggle("show-menu");
 }
 // animate skill section
 let section = document.getElementById("skills-section")

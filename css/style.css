@@ -119,38 +119,8 @@ width: 120px;
   --section-padding:100px;
 }
 /* End variables  */
-/* start scroll to top icon  */
- /* .scroll-top{
-  position: fixed;
-  bottom: 22px;
-  right: -100px;
-  display: flex;
-  font-size: 50px;
-  font-weight: bold;
-  background: #020202;
-  padding: 10px 20px;
-  color: var(--main-color);
-  z-index: 4000;
-  border: var(--transparent-color) solid 3px;
-  border-radius: 50%;
-  cursor: pointer;
-  width: 70px;
-transition: 0.2s;
-  height: 70px;
 
-  user-select: none;
-  justify-content: center;
-  align-items: center;
-}
-.scroll-top:hover{
-  background-color: var(--main-color);
-  color: #020202;
-}
-.show-top-icon{
-  right: 5px;
-} */
-
-
+/* start scrol to top icon */
 .top {
   display: block;
   position: fixed;
@@ -164,7 +134,9 @@ transition: 0.2s;
   cursor: pointer;
   transition: 0.5s;
   z-index: 2000;
+  font-size: 25px;
   }
+
   .show{
       right: 5px;
   }
@@ -276,14 +248,13 @@ nav ul {
 }
 @media (max-width:767px){
     nav ul {
-     display: none;
+      transform: scale(0);
         flex-direction: column;
         position: absolute;
         top: 100%;
         right: 0;
         width: 100%;
         text-align: center;
-        
         background-color: rgb(0, 0, 0 , 0.8);
        
     }
@@ -294,8 +265,8 @@ nav ul {
         font-size: 25px !important;
     }
 }
-.flex{
-    display: flex !important;
+.show-menu{
+  transform: scale(1) !important;
   
     
    
