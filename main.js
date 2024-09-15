@@ -119,3 +119,20 @@ sections.forEach((section) => {
   section.classList.add("hidden-section");
   sectionObserver.observe(section);
 });
+// imgs
+const allImgs = document.querySelectorAll("img");
+let loadImgs = function (enteries, observer) {
+  const [entery] = enteries;
+  if (!entery.isIntersecting) return;
+  entery.target.classList.remove("blur");
+  observer.unobserve(entery.target);
+};
+const imgObserver = new IntersectionObserver(loadImgs, {
+  root: null,
+  threshold: 0,
+});
+allImgs.forEach((img) => {
+  img.classList.add("blur");
+  img.style.transition = "all 0.7s";
+  imgObserver.observe(img);
+});
