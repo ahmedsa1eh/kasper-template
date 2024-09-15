@@ -103,3 +103,19 @@ function filterImgs() {
     ele.style.display = "block";
   });
 }
+// reveal sections on scroll
+const sections = document.querySelectorAll(".section");
+const revaelSection = function (enteries, observer) {
+  const [entery] = enteries;
+  if (!entery.isIntersecting) return;
+  entery.target.classList.remove("hidden-section");
+  observer.unobserve(entery.target);
+};
+const sectionObserver = new IntersectionObserver(revaelSection, {
+  root: null,
+  threshold: 0.15,
+});
+sections.forEach((section) => {
+  section.classList.add("hidden-section");
+  sectionObserver.observe(section);
+});
