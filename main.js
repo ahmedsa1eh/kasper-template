@@ -1,26 +1,27 @@
 var popUp = document.getElementById("pop-up");
+const landing = document.querySelector(".landing");
+const header = document.querySelector("header");
 
 // loader page
 let loadingPage = document.querySelector(".loader");
 window.addEventListener("load", function () {
   loadingPage.style.display = "none";
 });
-//  setInterval(function(){
-//  loadingPage.classList.add("hide-loader")
 
-// },1000)
-
-// scroll to top
-
+// scroll to top functionality
 let soP = document.querySelector(".top");
-window.onscroll = function () {
-  if (window.scrollY >= 300) {
+const scrrTopFn = function (enteries, observer) {
+  const [entery] = enteries;
+  if (!entery.isIntersecting) soP.classList.remove("show");
+  else {
     soP.classList.add("show");
-  } else {
-    soP.classList.remove("show");
   }
 };
-
+const scrllTopObserver = new IntersectionObserver(scrrTopFn, {
+  root: null,
+  threshold: 0,
+});
+scrllTopObserver.observe(header);
 soP.onclick = function () {
   window.scrollTo({
     left: 0,
@@ -28,8 +29,6 @@ soP.onclick = function () {
   });
 };
 // header sticky
-const header = document.querySelector("header");
-const landing = document.querySelector(".landing");
 const headerObsCb = function (enteries) {
   const [entery] = enteries;
   console.log(entery);
